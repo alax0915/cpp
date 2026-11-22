@@ -1,0 +1,67 @@
+# Project: car rental rms
+# Makefile created by Embarcadero Dev-C++ 6.3
+
+CPP      = g++.exe -D__DEBUG__
+CC       = gcc.exe -D__DEBUG__
+WINDRES  = windres.exe
+OBJ      = main.o car.o create_rental.o customer.o display_car.o display_customer.o function.o register_car.o register_customer.o rent.o return_car.o validate_car.o validate_customer.o validate_rent.o
+LINKOBJ  = main.o car.o create_rental.o customer.o display_car.o display_customer.o function.o register_car.o register_customer.o rent.o return_car.o validate_car.o validate_customer.o validate_rent.o
+LIBS     = -L"C:/Program Files (x86)/Embarcadero/Dev-Cpp/TDM-GCC-64/lib" -L"C:/Program Files (x86)/Embarcadero/Dev-Cpp/TDM-GCC-64/x86_64-w64-mingw32/lib" -static-libgcc -g3
+INCS     = -I"C:/Program Files (x86)/Embarcadero/Dev-Cpp/TDM-GCC-64/include" -I"C:/Program Files (x86)/Embarcadero/Dev-Cpp/TDM-GCC-64/x86_64-w64-mingw32/include" -I"C:/Program Files (x86)/Embarcadero/Dev-Cpp/TDM-GCC-64/lib/gcc/x86_64-w64-mingw32/9.2.0/include"
+CXXINCS  = -I"C:/Program Files (x86)/Embarcadero/Dev-Cpp/TDM-GCC-64/include" -I"C:/Program Files (x86)/Embarcadero/Dev-Cpp/TDM-GCC-64/x86_64-w64-mingw32/include" -I"C:/Program Files (x86)/Embarcadero/Dev-Cpp/TDM-GCC-64/lib/gcc/x86_64-w64-mingw32/9.2.0/include" -I"C:/Program Files (x86)/Embarcadero/Dev-Cpp/TDM-GCC-64/lib/gcc/x86_64-w64-mingw32/9.2.0/include/c++"
+BIN      = Project15.exe
+CXXFLAGS = $(CXXINCS) -g3
+CFLAGS   = $(INCS) -g3
+DEL      = C:\Program Files (x86)\Embarcadero\Dev-Cpp\devcpp.exe INTERNAL_DEL
+
+.PHONY: all all-before all-after clean clean-custom
+
+all: all-before $(BIN) all-after
+
+clean: clean-custom
+	${DEL} $(OBJ) $(BIN)
+
+$(BIN): $(OBJ)
+	$(CPP) $(LINKOBJ) -o $(BIN) $(LIBS)
+
+main.o: main.cpp
+	$(CPP) -c main.cpp -o main.o $(CXXFLAGS)
+
+car.o: car.cpp
+	$(CPP) -c car.cpp -o car.o $(CXXFLAGS)
+
+create_rental.o: create_rental.cpp
+	$(CPP) -c create_rental.cpp -o create_rental.o $(CXXFLAGS)
+
+customer.o: customer.cpp
+	$(CPP) -c customer.cpp -o customer.o $(CXXFLAGS)
+
+display_car.o: display_car.cpp
+	$(CPP) -c display_car.cpp -o display_car.o $(CXXFLAGS)
+
+display_customer.o: display_customer.cpp
+	$(CPP) -c display_customer.cpp -o display_customer.o $(CXXFLAGS)
+
+function.o: function.cpp
+	$(CPP) -c function.cpp -o function.o $(CXXFLAGS)
+
+register_car.o: register_car.cpp
+	$(CPP) -c register_car.cpp -o register_car.o $(CXXFLAGS)
+
+register_customer.o: register_customer.cpp
+	$(CPP) -c register_customer.cpp -o register_customer.o $(CXXFLAGS)
+
+rent.o: rent.cpp
+	$(CPP) -c rent.cpp -o rent.o $(CXXFLAGS)
+
+return_car.o: return_car.cpp
+	$(CPP) -c return_car.cpp -o return_car.o $(CXXFLAGS)
+
+validate_car.o: validate_car.cpp
+	$(CPP) -c validate_car.cpp -o validate_car.o $(CXXFLAGS)
+
+validate_customer.o: validate_customer.cpp
+	$(CPP) -c validate_customer.cpp -o validate_customer.o $(CXXFLAGS)
+
+validate_rent.o: validate_rent.cpp
+	$(CPP) -c validate_rent.cpp -o validate_rent.o $(CXXFLAGS)
